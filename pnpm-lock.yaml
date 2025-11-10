@@ -12,20 +12,20 @@ importers:
   .:
     dependencies:
       '@lynx-js/react':
-        specifier: file:lynx-js-react-0.112.2.tgz
+        specifier: file:./lynx-js-react-0.112.2.tgz
         version: file:lynx-js-react-0.112.2.tgz(@lynx-js/types@3.3.0)(@types/react@18.3.26)
     devDependencies:
       '@lynx-js/qrcode-rsbuild-plugin':
-        specifier: ^0.4.3
+        specifier: ^0.4.1
         version: 0.4.3
       '@lynx-js/react-rsbuild-plugin':
-        specifier: file:lynx-js-react-rsbuild-plugin-0.10.11.tgz
+        specifier: file:./lynx-js-react-rsbuild-plugin-0.10.11.tgz
         version: file:lynx-js-react-rsbuild-plugin-0.10.11.tgz(@lynx-js/react@file:lynx-js-react-0.112.2.tgz(@lynx-js/types@3.3.0)(@types/react@18.3.26))(webpack@5.101.3)
       '@lynx-js/rspeedy':
         specifier: ^0.10.8
         version: 0.10.8(@rspack/core@1.4.11(@swc/helpers@0.5.17))(typescript@5.9.3)(webpack@5.101.3)
       '@lynx-js/tailwind-preset':
-        specifier: ^0.2.1
+        specifier: ^0.2.0
         version: 0.2.1(tailwindcss@3.4.18(yaml@2.8.1))
       '@lynx-js/types':
         specifier: 3.3.0
@@ -34,10 +34,10 @@ importers:
         specifier: 1.2.4
         version: 1.2.4(@rsbuild/core@1.4.15)(@rspack/core@1.4.11(@swc/helpers@0.5.17))(typescript@5.9.3)
       '@types/react':
-        specifier: ^18.3.26
+        specifier: ^18.3.23
         version: 18.3.26
       cross-env:
-        specifier: ^10.1.0
+        specifier: ^10.0.0
         version: 10.1.0
       prettier:
         specifier: ^3.6.2
@@ -46,10 +46,10 @@ importers:
         specifier: ^0.2.3
         version: 0.2.3(@rsbuild/core@1.4.15)(tailwindcss@3.4.18(yaml@2.8.1))
       tailwindcss:
-        specifier: ^3.4.18
+        specifier: ^3.4.17
         version: 3.4.18(yaml@2.8.1)
       typescript:
-        specifier: ~5.9.3
+        specifier: ~5.9.2
         version: 5.9.3
 
 packages:
@@ -203,7 +203,7 @@ packages:
         optional: true
 
   '@lynx-js/react@file:lynx-js-react-0.112.2.tgz':
-    resolution: {integrity: sha512-I4sIZQLfllhpC2/EfNlAFB2PnfrtxTtrX0XRVpPOVqLQqd7zlgDPkc7pHPwzM+Mu6QK7dvofIq6mTpsLVH+VdQ==, tarball: file:lynx-js-react-0.112.2.tgz}
+    resolution: {integrity: sha512-USIu9G/gIGluncQaD67YcOga4bqjATrn1cRAFnoLj+ohdfIjkkMdNy5tPiZW6bDP6pUCy/yLHiGjTnGoQlkiFA==, tarball: file:lynx-js-react-0.112.2.tgz}
     version: 0.112.2
     peerDependencies:
       '@lynx-js/types': '*'
