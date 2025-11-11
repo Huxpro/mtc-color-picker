@@ -1,5 +1,3 @@
-'main thread';
-
 import { useState } from '@lynx-js/react';
 import { usePointerInteraction } from './use-mtc-pointer-interaction';
 import type {

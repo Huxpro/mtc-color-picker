@@ -1,5 +1,3 @@
-'main thread';
-
 import { useRef } from '@lynx-js/react';
 import type { MainThread } from '@lynx-js/types';
 
