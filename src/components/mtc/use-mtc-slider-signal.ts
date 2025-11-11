@@ -1,5 +1,3 @@
-'main thread';
-
 import { useComputed, useSignal } from '@lynx-js/react/signals';
 import { usePointerInteraction } from './use-mtc-pointer-interaction';
 import type {

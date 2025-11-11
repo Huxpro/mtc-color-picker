@@ -203,7 +203,7 @@ packages:
         optional: true
 
   '@lynx-js/react@file:lynx-js-react-0.112.2.tgz':
-    resolution: {integrity: sha512-USIu9G/gIGluncQaD67YcOga4bqjATrn1cRAFnoLj+ohdfIjkkMdNy5tPiZW6bDP6pUCy/yLHiGjTnGoQlkiFA==, tarball: file:lynx-js-react-0.112.2.tgz}
+    resolution: {integrity: sha512-IOhJT7b5I66h5onr00CWlJyJPAStBn2oaclrVJ2i60qd3NfidOOJmu4U9nOmlLgPnFtwV+Qul3zm/WfNT1kpkQ==, tarball: file:lynx-js-react-0.112.2.tgz}
     version: 0.112.2
     peerDependencies:
       '@lynx-js/types': '*'
