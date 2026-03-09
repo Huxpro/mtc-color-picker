@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@lynx-js/react-webpack-plugin': file:./lynx-js-react-webpack-plugin-0.6.19.tgz
+  '@lynx-js/react-rsbuild-plugin@0.10.11>@lynx-js/react-webpack-plugin': file:./lynx-js-react-webpack-plugin-0.6.19.tgz
 
 importers:
 
@@ -25,8 +25,8 @@ importers:
         specifier: ^0.10.8
         version: 0.10.8(@rspack/core@1.4.11(@swc/helpers@0.5.17))(typescript@5.9.3)(webpack@5.101.3)
       '@lynx-js/tailwind-preset':
-        specifier: ^0.2.0
-        version: 0.2.1(tailwindcss@3.4.18(yaml@2.8.1))
+        specifier: 0.4.0
+        version: 0.4.0(tailwindcss@3.4.18(yaml@2.8.1))
       '@lynx-js/types':
         specifier: 3.3.0
         version: 3.3.0
@@ -226,10 +226,10 @@ packages:
     resolution: {integrity: sha512-zfVas0CHT423TgX4FRRcz5De0IOhOe3s9NSa4HmxUTy3o7A1DNQ0mqwCWxzWl6wSzD8aqwl6MVWyM/wGKko03w==}
     engines: {node: '>=18'}
 
-  '@lynx-js/tailwind-preset@0.2.1':
-    resolution: {integrity: sha512-HZzyDpaTgmbSKKsP1l5+kfjDLBH+Z8NuOC0sGbCzSzCqhHbP6YJ3eP4CgfoMG9f7YT7J7oUiXRaIDLDyEqLKNA==}
+  '@lynx-js/tailwind-preset@0.4.0':
+    resolution: {integrity: sha512-ILFRM37SiwkEK/mKs0s2kdHInRpu0mkeEsbdx7PHnSXzLPEs/uu4zJRkbByMYXtf+Pf3PxuoPMKROcFhVkSQWQ==}
     peerDependencies:
-      tailwindcss: ^3
+      tailwindcss: ^3.4.0
 
   '@lynx-js/tasm@0.0.5':
     resolution: {integrity: sha512-E5ZTtNQslv0zGMqtEo/GULHM0XiyvkuL4K8SxP8R9n0WnInppIiekIP5Rzvt+oex7Sg8ngtm/ToUDiZ0NQ9+Qg==}
@@ -2561,7 +2561,7 @@ snapshots:
     dependencies:
       '@lynx-js/webpack-runtime-globals': 0.0.5
 
-  '@lynx-js/tailwind-preset@0.2.1(tailwindcss@3.4.18(yaml@2.8.1))':
+  '@lynx-js/tailwind-preset@0.4.0(tailwindcss@3.4.18(yaml@2.8.1))':
     dependencies:
       tailwindcss: 3.4.18(yaml@2.8.1)
 
