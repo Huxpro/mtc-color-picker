@@ -86,6 +86,9 @@ function usePointerInteraction({
   // ── Touch handlers (native + web touch devices) ──
 
   function handlePointerDown(e: MainThread.TouchEvent) {
+    // Clear the prior gesture's snapshot so a fallback commit from this
+    // gesture can never re-emit the previous gesture's position.
+    posRef.current = null;
     draggingRef.current = true;
     const x = pickCoord(e);
     if (x === null) return;
@@ -114,6 +117,7 @@ function usePointerInteraction({
   // ── Mouse handlers (desktop web where touch events are unavailable) ──
 
   function handleMouseDown(e: MainThread.MouseEvent) {
+    posRef.current = null;
     draggingRef.current = true;
     const x = e.clientX ?? e.pageX;
     updateFromX(x);
@@ -153,8 +157,10 @@ function usePointerInteraction({
   function handleElementLayoutChange(e: MainThread.LayoutChangeEvent) {
     eleWidthRef.current = e.detail.width;
 
+    // Screen-relative on native, viewport-relative on Lynx Web — matches
+    // the coord source (`detail.x` / `clientX`) on each platform.
     e.currentTarget
-      .invoke('boundingClientRect')
+      .invoke('boundingClientRect', { relativeTo: 'screen' })
       .then((rect: { left: number }) => {
         eleLeftRef.current = rect.left;
       })

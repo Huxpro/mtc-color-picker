@@ -137,6 +137,9 @@ function usePointerInteraction({
   // ── Touch handlers (native + web touch devices) ──
 
   const handlePointerDown = (e: TouchEvent) => {
+    // Clear the prior gesture's snapshot so a fallback commit from this
+    // gesture can never re-emit the previous gesture's position.
+    posRef.current = null;
     draggingRef.current = true;
     const x = pickCoord(e);
     if (x === null) return;
@@ -169,6 +172,7 @@ function usePointerInteraction({
   // ── Mouse handlers (desktop web where touch events are unavailable) ──
 
   const handleMouseDown = (e: MouseEvent) => {
+    posRef.current = null;
     draggingRef.current = true;
     const x = e.clientX ?? e.pageX;
     updateFromFreshRect(x);
