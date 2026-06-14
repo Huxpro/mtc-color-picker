@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './App.css';
 
 const demos = [
@@ -16,14 +16,30 @@ export function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [closing, setClosing] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const closeTimerRef = useRef<number | null>(null);
 
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
+    // Coalesce multiple rapid close calls so we only ever have one timer.
+    if (closeTimerRef.current !== null) {
+      window.clearTimeout(closeTimerRef.current);
+    }
     setClosing(true);
-    setTimeout(() => {
+    closeTimerRef.current = window.setTimeout(() => {
       setMenuOpen(false);
       setClosing(false);
+      closeTimerRef.current = null;
     }, 180);
-  };
+  }, []);
+
+  // Clear any pending close timer on unmount to avoid setState-after-unmount.
+  useEffect(
+    () => () => {
+      if (closeTimerRef.current !== null) {
+        window.clearTimeout(closeTimerRef.current);
+      }
+    },
+    [],
+  );
 
   const toggleMenu = () => {
     if (menuOpen) {
@@ -40,7 +56,7 @@ export function App() {
     };
     document.addEventListener('keydown', handleEsc);
     return () => document.removeEventListener('keydown', handleEsc);
-  }, [menuOpen]);
+  }, [menuOpen, closeMenu]);
 
   return (
     <div className="container">
